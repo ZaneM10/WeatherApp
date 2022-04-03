@@ -1,0 +1,101 @@
+body{
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+#front{
+    background: cornflowerblue;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* margin-top: 10rem; */
+    height: 100%;
+    width: 100%;
+    color: azure;
+    border: solid 1px black;
+    /* margin: 20; */
+    max-width: 50%;    
+    margin-left: 390px;
+    
+
+    
+}
+#face {
+   font-size: 35px;
+   
+   color:white;
+   width: 100%;
+   margin: 0;
+}
+
+#button {
+    background: blue;
+}
+
+#textID {
+    border-radius: 30px;
+    border: 1px solid cornflowerblue;
+    margin: 0px;
+}
+#searchBtn {
+    border-radius: 30px;
+    size: 200px;
+    color: cornflowerblue;
+    align-items:center ;
+}
+#icon{
+    border: solid 1px black;
+    background: gray;
+}
+#list-group{
+    border: 1px solid black;
+    margin: 0;
+}
+#day1{
+  border: solid 1px black;
+  
+} 
+
+#day2{
+    border: solid 1px black;
+  } 
+
+#day3{
+    border: solid 1px black;
+  } 
+
+#day4{
+    border: solid 1px black;
+  } 
+
+#day5{
+    border: solid 1px black;
+  } 
+
+  #day1 :hover{
+   border: 3px double black;
+   background: slategrey;
+   color: white;
+  } 
+  #day2 :hover{
+    border: 3px double black;
+    background: slategray;
+    color: white;
+   } 
+   #day3 :hover{
+    border: 3px double black;
+    background: slategray;
+    color: white;
+   } 
+   #day4:hover{
+    border: 3px double black;
+    background: slategray;
+    color: white;
+   } 
+   #day5 :hover{
+    border: 3px double black;
+    background: slategray;
+    color: white;
+   } 
+  
