@@ -1,13 +1,7 @@
 var searchBtn = document.getElementById("search-Btn");
 var cityName = document.getElementById("textId")
 
-searchBtn.addEventListener("click", function (event) {
-  event.preventDefault();
-  var inputText = document.getElementById("textId");
-  var cityInfo = inputText.value.trim();
-  console.log(cityInfo)
-  loadCityTemp(cityInfo, true);
-});
+
 
 function loadCityTemp(cityName) {
   fetch(
@@ -85,24 +79,26 @@ function fiveDay(lat , lon) {
 }
 }
 
-if(newSearch) {
-    var localStorageKey = `previousCities`;
+function newSearch(data) {
+    var localStorageKey = `cityName`;
     if(localStorage.getItem(localStorageKey)) {
         var cities = JSON.parse(localStorage.getItem(localStorageKey));
-        cities.push(data.name);
+        cities.push(data);
         localStorage.setItem(localStorageKey, JSON.stringify(cities));
     } else {
-        localStorage.setItem(localStorage, JSON.stringify([data.name]));
+        localStorage.setItem(localStorageKey, JSON.stringify([data]));
     }
     loadCityHistory();
 }
-newSearch();
+
 function loadCityHistory() {
+    var historyDropdown = document.getElementById('history-dropdown')
     historyDropdown.innerHTML = "";
-    var localStorageKey = `previousCities`;
+    var localStorageKey = `cityName`;
     var cities = JSON.parse(localStorage.getItem(localStorageKey));
     if (cities) {
-        for (let i = cities.length; i>= cities.length - 10; i--) {
+      var loopLimit =  cities.length > 10 ? 10 : cities.length 
+        for (let i = 0; i<loopLimit; i++) {
             var previousCity = document.createElement("li");
             previousCity.classList.add("prev-cities");
             previousCity.textContent =cities[i];
@@ -110,7 +106,18 @@ function loadCityHistory() {
                 console.log('test')
                 loadCityTemp(cities[i], false);
             });
-            historyDropdown.append(previousCity  );
+            historyDropdown.prepend(previousCity  );
         }
     }
 }
+
+searchBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    var inputText = document.getElementById("textId");
+    var cityInfo = inputText.value.trim();
+    console.log(cityInfo)
+    loadCityTemp(cityInfo, true);
+    newSearch(cityInfo);
+  });
+
+  loadCityHistory();

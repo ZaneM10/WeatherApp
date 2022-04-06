@@ -5,21 +5,23 @@ body{
 }
 
 #front{
+    display: flex;
+    flex-direction: row-reverse;
     background: cornflowerblue;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly ;
     text-align: center;
     /* margin-top: 10rem; */
     height: 100%;
     width: 100%;
     color: azure;
-    border: solid 1px black;
-    /* margin: 20; */
-    max-width: 50%;    
-    margin-left: 390px;
-    
+    border: solid 1px black;  
+}
 
-    
+#cardClass {
+    justify-content: space-between;
+    padding: 10px;
+   
 }
 #face {
    font-size: 35px;
@@ -99,3 +101,19 @@ body{
     color: white;
    } 
   
+.prev-cities {
+    border: solid 1px black;
+    padding: 4px;
+    background: white;
+    color: black;
+    list-style-type: none;
+    margin-top: 4px;
+    cursor: pointer;
+
+ 
+}
+.prev-cities:hover {
+    box-shadow: 5px 5px 20px white ;
+    background: slategray;
+    color: navy;
+}
